@@ -9,3 +9,16 @@ To build the Docker image, run the following command:
 ```bash
 docker build -t convertor-app .
 
+# Convertor App
+
+## Usage
+
+To run the container and create a PDF from images in the `images` directory:
+
+```bash
+docker run --rm \
+  -v $(pwd)/images:/app/images \
+  -v $(pwd)/output:/app/output \
+  -e PDF_NAME=my_custom_output \
+  convertor-app /app/images
+
